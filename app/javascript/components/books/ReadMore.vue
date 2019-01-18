@@ -9,6 +9,7 @@
       </div>
     </div>
     <a href="#" v-if="!readMore" v-on:click="toggleReadMore($event)">Read More</a>
+
     <div class="book-details" v-if="readMore">
       <div class="row mt-3">
         <div class="col-md-4">
