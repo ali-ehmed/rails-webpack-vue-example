@@ -21,7 +21,7 @@
       </div>
       <div class="row mt-3">
         <div class="col text-justify">
-          {{ book.description }}
+          {{ book.description || '---' }}
         </div>
       </div>
       <div class="row mt-2">
