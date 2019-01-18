@@ -22,14 +22,15 @@
 import Turbolinks from "turbolinks";
 Turbolinks.start();
 
-import TurbolinksAdapter from 'vue-turbolinks';
 import Vue from 'vue/dist/vue.esm';
+
+import TurbolinksAdapter from 'vue-turbolinks';
+
+Vue.use(TurbolinksAdapter);
 
 // Components
 import Ratings from '../components/books/Ratings.vue';
 import ReadMore from '../components/books/ReadMore.vue';
-
-Vue.use(TurbolinksAdapter);
 
 // Register Components
 Vue.component('ratings', Ratings);

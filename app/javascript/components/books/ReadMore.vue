@@ -11,9 +11,11 @@
     <a href="#" v-if="!readMore" v-on:click="toggleReadMore($event)">Read More</a>
     <div class="book-details" v-if="readMore">
       <div class="row mt-3">
-        <div class="col">
+        <div class="col-md-4">
           <a :href="'/books/' + book.id + '/edit'" class="text-info mr-3">Edit Book Info</a>
-          <a href="#" v-on:click="deleteBook($event)" class="text-danger">Delete This Book</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#" v-on:click="deleteBook($event)" class="text-danger" role="button">Delete This Book</a>
         </div>
       </div>
       <div class="row mt-3">
