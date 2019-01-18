@@ -31,10 +31,12 @@ Vue.use(TurbolinksAdapter);
 // Components
 import Ratings from '../components/books/Ratings.vue';
 import ReadMore from '../components/books/ReadMore.vue';
+import ClickConfirm from 'click-confirm';
 
 // Register Components
 Vue.component('ratings', Ratings);
 Vue.component('read-more', ReadMore);
+Vue.component('clickConfirm', ClickConfirm);
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({

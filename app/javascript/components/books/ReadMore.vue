@@ -16,7 +16,9 @@
           <a :href="'/books/' + book.id + '/edit'" class="text-info mr-3">Edit Book Info</a>
         </div>
         <div class="col-md-4">
-          <a href="#" v-on:click="deleteBook($event)" class="text-danger" role="button">Delete This Book</a>
+          <click-confirm>
+            <a href="#" v-on:click="deleteBook($event)" role="button" class="text-danger">Delete This Book</a>
+          </click-confirm>
         </div>
       </div>
       <div class="row mt-3">
