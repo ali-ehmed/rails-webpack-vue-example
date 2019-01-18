@@ -12,7 +12,8 @@
     <div class="book-details" v-if="readMore">
       <div class="row mt-3">
         <div class="col">
-          <a :href="'/books/' + book.id + '/edit'">Edit Book Info</a>
+          <a :href="'/books/' + book.id + '/edit'" class="text-info mr-3">Edit Book Info</a>
+          <a href="#" v-on:click="deleteBook($event)" class="text-danger">Delete This Book</a>
         </div>
       </div>
       <div class="row mt-3">
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  import Rails from 'rails-ujs';
   export default {
     data: function () {
       return {
@@ -41,6 +44,16 @@
       toggleReadMore(e) {
         e.preventDefault();
         this.readMore = !this.readMore;
+      },
+      deleteBook(e) {
+        e.preventDefault();
+        axios.delete("/books/" + this.book.id, { data: { format: 'json', authenticity_token: Rails.csrfToken() } })
+          .then(() => {
+            Turbolinks.visit('/books');
+          })
+          .catch((error)=>{
+            console.log(error);
+          });
       }
     }
   }

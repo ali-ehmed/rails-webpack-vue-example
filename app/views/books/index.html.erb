@@ -3,7 +3,7 @@
   <%= link_to 'Add New Book', new_book_path, class: 'btn btn-outline-dark float-right' %>
   <h1 class="my-5">Books</h1>
   <% @books.each do |book| %>
-    <div class="row mt-3">
+    <div class="row mt-3" id="book_list_<%= book.id %>">
       <div class="col-sm-3">
         <div>
           <%= book_cover_tag(book, class: 'book-cover') %>
